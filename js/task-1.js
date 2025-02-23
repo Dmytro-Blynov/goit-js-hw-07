@@ -1,15 +1,14 @@
-function makeTransaction(quantity, pricePerDroid, customerCredits) {
-    const totalPrice = quantity * pricePerDroid;
-    
-    if (totalPrice > customerCredits) {
-        return "Insufficient funds!";
-    } else {
-        return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
-    }
-}
+const categoriesList = document.querySelector("#categories");
 
-console.log(makeTransaction(5, 3000, 23000)); 
-console.log(makeTransaction(3, 1000, 15000)); 
-console.log(makeTransaction(10, 5000, 8000)); 
-console.log(makeTransaction(8, 2000, 10000)); 
-console.log(makeTransaction(10, 500, 5000)); 
+const categories = categoriesList.querySelectorAll(".item");
+
+console.log(`Number of categories: ${categories.length}`);
+
+categories.forEach((category) => {
+  const categoryTitle = category.querySelector("h2").textContent;
+
+  const categoryItems = category.querySelectorAll("ul li");
+
+  console.log(`Category: ${categoryTitle}`);
+  console.log(`Elements: ${categoryItems.length}`);
+});
